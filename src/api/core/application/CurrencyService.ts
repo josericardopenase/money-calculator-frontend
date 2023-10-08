@@ -5,15 +5,15 @@ export class CurrencyService{
     }
 
     async getCurrencies(){
-        return this.apiAdapter.get<Record<string, string>>('/currencies');
+        return this.apiAdapter.get<ApiResponse<Record<string, string>>>('/currencies/');
     }
     
     async getConversions(){
-        return this.apiAdapter.get<ApiPaginatedResponse<CurrencyConversion[]>>('/currencies/conversions');
+        return this.apiAdapter.get<ApiPaginatedResponse<CurrencyConversion[]>>('/currencies/conversions/');
     }
 
     async convert(from: string, to: string, quantity: number){
-        return this.apiAdapter.get<ApiResponse<CurrencyConversion>>(`/currencies/${from}/to/${to}/quantity/${quantity}`);
+        return this.apiAdapter.get<ApiResponse<CurrencyConversion>>(`/currencies/${from}/convert/${to}/amount/${quantity}/`);
     }
 
     async getCurrencyValueChart(from: string, to: string){

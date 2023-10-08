@@ -1,12 +1,12 @@
 
 interface ApiResponse<T>{
     status: number;
-    data: T;
+    result: T;
 }
 
 interface ApiPaginatedResponse<T>{
     status: number;
     pageSize: number;
     page: number;
-    data: T;
+    result: T;
 }
