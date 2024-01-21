@@ -1,27 +1,64 @@
-# React + TypeScript + Vite
+# Interfaz de Intercambio de Divisas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta aplicación es una interfaz de usuario para un sistema de intercambio de divisas, construida con React, TypeScript y Vite. Ofrece una experiencia de usuario fluida y eficiente para realizar operaciones de intercambio de divisas en tiempo real.
 
-Currently, two official plugins are available:
+## Características Principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Hot Module Replacement (HMR):** Recarga en vivo del módulo para un desarrollo rápido y eficiente.
+- **TypeScript Integrado:** Proporciona tipado estático para un código más seguro y mantenible.
+- **Vite para un Desarrollo Rápido:** Vite ofrece un servidor de desarrollo ultrarrápido con optimización de módulos.
+- **Conexión con API de Intercambio de Divisas:** Interfaz diseñada para interactuar con la API de intercambio de divisas, permitiendo realizar y visualizar conversiones de moneda en tiempo real.
 
-## Expanding the ESLint configuration
+## Configuración de ESLint
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+La aplicación incluye una configuración de ESLint personalizada para garantizar la calidad del código:
 
-- Configure the top-level `parserOptions` property like this:
+1. **Parser Options:**
+   - Configura las opciones del analizador para TypeScript y ECMAScript moderno.
+   - `parserOptions` incluye:
+     ```javascript
+     {
+       ecmaVersion: 'latest',
+       sourceType: 'module',
+       project: ['./tsconfig.json', './tsconfig.node.json'],
+       tsconfigRootDir: __dirname,
+     }
+     ```
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+2. **Reglas de TypeScript:**
+   - Utiliza `plugin:@typescript-eslint/recommended-type-checked` o `plugin:@typescript-eslint/strict-type-checked` para reglas más estrictas.
+   - Opcionalmente, añade `plugin:@typescript-eslint/stylistic-type-checked`.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+3. **Integración de React:**
+   - Instala `eslint-plugin-react`.
+   - Añade `plugin:react/recommended` y `plugin:react/jsx-runtime` a la lista de extensiones.
+
+## Uso
+
+Para comenzar a usar esta aplicación, sigue estos pasos:
+
+1. Clona el repositorio y navega a su directorio:
+   ```bash
+   git clone [URL del repositorio]
+   cd [Nombre del proyecto]
+   ```
+
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+
+3. Inicia el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
+
+La aplicación ahora estará corriendo en `http://localhost:3000/` y estará lista para interactuar con la API de intercambio de divisas.
+
+## Contribuciones
+
+Las contribuciones son bienvenidas para mejorar la aplicación. Por favor, lee el archivo `CONTRIBUTING.md` para más detalles sobre cómo contribuir.
+
+## Licencia
+
+Este proyecto está bajo la licencia [Nombre de la Licencia]. Consulta el archivo `LICENSE` para más detalles.
